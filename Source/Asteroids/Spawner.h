@@ -5,7 +5,7 @@
 #include "GameFramework/Actor.h"
 #include "Spawner.generated.h"
 
-UCLASS()
+UCLASS(Blueprintable)
 class ASTEROIDS_API ASpawner : public AActor
 {
 	GENERATED_BODY()
@@ -22,7 +22,8 @@ public:
     
     //get the list of english dictionary words
     //whose long is n
-    virtual TArray<FString> WordsWithLength(int8 n);
+    UFUNCTION(BlueprintCallable, Category="Spawner")
+    virtual TArray<FString> WordsWithLength(int8 numChars);
     
     //map of english dictionary words
     //mapped according to their length

@@ -33,8 +33,8 @@ void ASpawner::BeginPlay()
 
 //get the list of english dictionary words
 //whose long is n
-TArray<FString> ASpawner::WordsWithLength(int8 n){
-    return *(wordsMap.Find(n));
+TArray<FString> ASpawner::WordsWithLength(int8 numChars){
+    return *(wordsMap.Find(numChars));
 }
 
 // Called every frame
