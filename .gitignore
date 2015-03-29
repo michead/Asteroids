@@ -3,5 +3,11 @@ Intermediate/
 Saved/
 *.opensdf
 *.sdf
+
+#VS files
 *.sln
 *.v12.suo
+
+#OSX files
+.DS_Store
+*.xcodeproj/
