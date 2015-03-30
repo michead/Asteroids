@@ -20,12 +20,19 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
     
-    //get the list of english dictionary words
-    //whose long is n
+    //get random word from the english dictionary
     UFUNCTION(BlueprintCallable, Category="Spawner")
-    virtual FString GetRandomWordWithLength(int8 numChars);
+    virtual FString GetRandomWord();
     
     //map of english dictionary words
     //mapped according to their length
     TMap<int8, TArray<FString>> wordsMap;
+    
+private:
+    //array used to store the probability of each n-character word
+    TArray<int8> probability_array;
+    
+    //get the list of english dictionary words
+    //whose long is n
+    virtual FString GetRandomWordWithLength(int8 numChars);
 };
