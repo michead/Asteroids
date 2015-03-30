@@ -26,15 +26,20 @@ void ASpawner::BeginPlay()
         TArray<FString> parsed;
         string.ParseIntoArray(&parsed, TEXT("\n"), true);
         wordsMap.Add(i, parsed);
-        
-        print(i, 3, FString::FromInt(parsed.Num()));
     }
+    //TODO fixed on random 8-character words
+    FString selected_string = GetRandomWordWithLength(8);
+    print(-1, 3, selected_string);
 }
 
 //get the list of english dictionary words
 //whose long is n
-TArray<FString> ASpawner::WordsWithLength(int8 numChars){
-    return *(wordsMap.Find(numChars));
+    FString ASpawner::GetRandomWordWithLength(int8 numChars){
+    TArray<FString> words_array = *(wordsMap.Find(numChars));
+    int32 array_size = words_array.Num();
+    int32 random_index = FMath::RandRange(0, array_size -1);
+    FString random_string = words_array[random_index];
+    return random_string;
 }
 
 // Called every frame

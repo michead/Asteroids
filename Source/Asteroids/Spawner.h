@@ -23,7 +23,7 @@ public:
     //get the list of english dictionary words
     //whose long is n
     UFUNCTION(BlueprintCallable, Category="Spawner")
-    virtual TArray<FString> WordsWithLength(int8 numChars);
+    virtual FString GetRandomWordWithLength(int8 numChars);
     
     //map of english dictionary words
     //mapped according to their length
